@@ -188,8 +188,6 @@ section { padding: 5.5rem 1.5rem; }
 .galeria-inner .divider { background: var(--laranja-vivo); }
 .gallery-grid { display:grid; grid-template-columns: 2fr 1fr; gap:12px; margin-top:2rem; }
 .gallery-item { border-radius:14px; overflow:hidden; min-height:220px; background:rgba(255,255,255,0.08); }
-.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.4s; }
-.gallery-item:hover img { transform: scale(1.04); }
 .insta-promo { margin-top:2rem; color:rgba(245,230,200,0.75); font-size:1rem; }
 .insta-promo a { color:var(--laranja-vivo); font-weight:700; text-decoration:none; }
 
@@ -218,6 +216,71 @@ footer strong { color:var(--areia); }
 /* Scroll reveal */
 .sr { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease,transform 0.7s ease; }
 .sr.visible { opacity:1; transform:translateY(0); }
+
+/* Gallery 3-column grid */
+.gallery-grid-3 { grid-template-columns: 1fr 1fr 1fr !important; }
+/* Gallery featured overlay */
+.gallery-featured { position: relative; }
+.gallery-featured::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.45));
+  border-radius: 14px; pointer-events: none;
+  transition: opacity 0.35s;
+}
+.gallery-featured:hover::after { opacity: 0; }
+
+/* Gallery item stagger entrance */
+@keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.gallery-grid .gallery-item:nth-child(1) { animation: slideUp 0.55s 0.1s ease both; }
+.gallery-grid .gallery-item:nth-child(2) { animation: slideUp 0.55s 0.2s ease both; }
+.gallery-grid-3 .gallery-item:nth-child(1) { animation: slideUp 0.55s 0.15s ease both; }
+.gallery-grid-3 .gallery-item:nth-child(2) { animation: slideUp 0.55s 0.3s ease both; }
+.gallery-grid-3 .gallery-item:nth-child(3) { animation: slideUp 0.55s 0.45s ease both; }
+
+/* Gallery item hover zoom */
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.5s cubic-bezier(.25,.8,.25,1); }
+.gallery-item:hover img { transform: scale(1.08); }
+
+/* Badge hover bounce */
+.badge { transition: transform 0.2s, box-shadow 0.2s, background 0.2s; cursor: default; }
+.badge:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 6px 16px rgba(0,0,0,0.14); background: var(--areia-escura); }
+
+/* Info block hover lift */
+.info-block { transition: transform 0.25s, box-shadow 0.25s; }
+.info-block:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.12); }
+
+/* Nav link animated underline */
+nav a { position: relative; }
+nav a::after { content:''; position:absolute; bottom:0; left:50%; width:0; height:2px; background:var(--laranja-vivo); transition:width 0.3s ease, left 0.3s ease; }
+nav a:hover::after { width:100%; left:0; }
+
+/* Sobre image hover tilt */
+.sobre-img-wrap { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+.sobre-img-wrap:hover { transform: rotate(-1.5deg) scale(1.02); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+
+/* Button glow on hover */
+.btn-primary:hover { box-shadow: 0 8px 28px rgba(224,123,57,0.55); }
+.btn-wpp:hover { box-shadow: 0 8px 28px rgba(37,211,102,0.55); }
+.btn-insta:hover { box-shadow: 0 8px 28px rgba(220,39,67,0.45); }
+
+/* Excursao button shimmer */
+@keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+.btn-excursao:hover { background: linear-gradient(90deg, white 0%, #fffde7 50%, white 100%); background-size: 200% auto; animation: shimmer 0.8s ease; }
+
+/* Section title span glow */
+.section-title span { text-shadow: 0 0 20px rgba(244,162,97,0.3); transition: text-shadow 0.3s; }
+.section-title:hover span { text-shadow: 0 0 30px rgba(244,162,97,0.6); }
+
+/* Tab button animated switch */
+.tab-btn { transition: all 0.25s cubic-bezier(.25,.8,.25,1); }
+.tab-btn.active { transform: scale(1.04); }
+
+/* Scroll reveal with slide from left for sobre */
+.sobre-inner.visible .sobre-img-wrap { animation: slideInLeft 0.7s ease both; }
+.sobre-inner.visible .sobre-text { animation: slideInRight 0.7s 0.15s ease both; }
+@keyframes slideInLeft { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+@keyframes slideInRight { from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
 
 /* Responsive */
 @media(max-width:720px) {
