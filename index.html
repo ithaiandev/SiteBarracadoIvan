@@ -299,6 +299,7 @@
 </header>
 
 <nav>
+  <button class="nav-toggle" aria-label="Abrir menu">&#9776;</button>
   <a href="#sobre">Sobre</a>
   <a href="praia-do-barro-vermelho.html">A Praia</a>
   <a href="cardapio.html">Cardápio</a>
@@ -687,6 +688,10 @@
 </footer>
 
 <script>
+const navToggle = document.querySelector('.nav-toggle');
+const navEl = document.querySelector('nav');
+if (navToggle) navToggle.addEventListener('click', () => navEl.classList.toggle('open'));
+
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));

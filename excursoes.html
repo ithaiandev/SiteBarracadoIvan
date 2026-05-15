@@ -95,6 +95,7 @@
 </header>
 
 <nav>
+  <button class="nav-toggle" aria-label="Abrir menu">&#9776;</button>
   <a href="index.html">Início</a>
   <a href="praia-do-barro-vermelho.html">A Praia</a>
   <a href="cardapio.html">Cardápio</a>
@@ -216,6 +217,10 @@
 </footer>
 
 <script>
+const navToggle = document.querySelector('.nav-toggle');
+const navEl = document.querySelector('nav');
+if (navToggle) navToggle.addEventListener('click', () => navEl.classList.toggle('open'));
+
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, {threshold: 0.1});

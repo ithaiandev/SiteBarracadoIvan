@@ -111,6 +111,11 @@ nav a {
   padding: 1rem 1.3rem; transition: color 0.2s, background 0.2s;
 }
 nav a:hover { color: var(--areia); background: rgba(255,255,255,0.08); }
+.nav-toggle {
+  display: none; background: none; border: none;
+  color: rgba(245,230,200,0.9); font-size: 1.7rem; cursor: pointer;
+  padding: 0.85rem 1.2rem; line-height: 1; align-self: center; flex-shrink: 0;
+}
 
 /* SECTIONS */
 section { padding: 5.5rem 1.5rem; }
@@ -314,8 +319,12 @@ nav a:hover::after { width:100%; left:0; }
   .gallery-featured { grid-column: span 2; height: 260px; }
   .gallery-item { height: 180px; }
   .contato-mapa { height: 260px; }
-  nav { flex-wrap: wrap; justify-content: flex-start; }
-  nav a { padding: 0.7rem 0.9rem; font-size: 0.74rem; }
+  /* HAMBURGER MENU */
+  nav { flex-direction: column; align-items: stretch; }
+  .nav-toggle { display: flex; justify-content: flex-end; width: 100%; }
+  nav a { display: none; text-align: center; padding: 0.85rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); justify-content: center; }
+  nav.open a { display: flex; }
+  nav a::after { display: none; }
   .preco-table th, .preco-table td { padding: 0.55rem 0.65rem; font-size: 0.82rem; }
   .cardapio-img-wrap { max-width: 100%; margin-bottom: 1.2rem; }
   .hero-ctas { gap: 0.65rem; }
@@ -333,15 +342,6 @@ nav a:hover::after { width:100%; left:0; }
   .b1 { width: 120px; height: 120px; }
   .b4 { width: 100px; height: 100px; }
   .b2, .b3 { display: none; }
-
-  nav {
-    overflow-x: auto; flex-wrap: nowrap;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  nav::-webkit-scrollbar { display: none; }
-  nav a { white-space: nowrap; padding: 0.75rem 0.85rem; font-size: 0.72rem; letter-spacing: 0.8px; }
 
   section { padding: 3.5rem 1rem; }
 
