@@ -99,15 +99,27 @@
 </header>
 
 <nav>
-  <button class="nav-toggle" aria-label="Abrir menu">&#9776;</button>
-  <a href="index.html">Início</a>
-  <a href="paulino-neves.html">Paulino Neves</a>
-  <a href="praia-do-barro-vermelho.html">A Praia</a>
-  <a href="cardapio.html">Cardápio</a>
-  <a href="excursoes.html">Excursões</a>
-  <a href="como-chegar-paulino-neves.html">Como Chegar</a>
-  <a href="index.html#faq">FAQ</a>
-  <a href="index.html#contato">Contato</a>
+  <div class="nav-primary-links">
+    <a href="cardapio.html">Cardápio</a>
+    <a href="praia-do-barro-vermelho.html">Praia do Barro Vermelho</a>
+    <a href="paulino-neves.html">Paulino Neves</a>
+    <a href="index.html#galeria">Galeria</a>
+    <a href="como-chegar-paulino-neves.html">Como Chegar</a>
+  </div>
+  <div class="nav-more">
+    <button class="nav-toggle" aria-label="Mais páginas">&#9776;</button>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="cardapio.html" class="mobile-only">Cardápio</a>
+      <a href="praia-do-barro-vermelho.html" class="mobile-only">Praia do Barro Vermelho</a>
+      <a href="paulino-neves.html" class="mobile-only">Paulino Neves</a>
+      <a href="index.html#galeria" class="mobile-only">Galeria</a>
+      <a href="como-chegar-paulino-neves.html" class="mobile-only">Como Chegar</a>
+      <a href="index.html">Início</a>
+      <a href="excursoes.html">Excursões</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+  </div>
 </nav>
 
 <!-- INTRODUÇÃO -->
@@ -217,7 +229,7 @@
   <div class="footer-links">
     <a href="index.html">Início</a>
     <a href="paulino-neves.html">Paulino Neves</a>
-    <a href="praia-do-barro-vermelho.html">A Praia</a>
+    <a href="praia-do-barro-vermelho.html">Praia do Barro Vermelho</a>
     <a href="cardapio.html">Cardápio</a>
     <a href="excursoes.html">Excursões</a>
     <a href="como-chegar-paulino-neves.html">Como Chegar</a>
@@ -232,8 +244,11 @@
 
 <script>
 const navToggle = document.querySelector('.nav-toggle');
-const navEl = document.querySelector('nav');
-if (navToggle) navToggle.addEventListener('click', () => navEl.classList.toggle('open'));
+const navDropdown = document.getElementById('navDropdown');
+if (navToggle && navDropdown) {
+  navToggle.addEventListener('click', function(e) { e.stopPropagation(); navDropdown.classList.toggle('open'); });
+  document.addEventListener('click', function() { navDropdown.classList.remove('open'); });
+}
 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
