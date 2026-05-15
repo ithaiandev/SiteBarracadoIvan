@@ -64,4 +64,63 @@
     </image:image>
 
   </url>
+
+  <url>
+    <loc>https://barracadoivan.com/praia-do-barro-vermelho.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://barracadoivan.com/Imagens/praiadrone.jpeg</image:loc>
+      <image:title>Praia do Barro Vermelho – Paulino Neves, Maranhão</image:title>
+      <image:caption>Vista aérea da Praia do Barro Vermelho em Paulino Neves – MA, destino turístico nos Lençóis Maranhenses.</image:caption>
+      <image:geo_location>Paulino Neves, Maranhão, Brasil</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://barracadoivan.com/cardapio.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://barracadoivan.com/Imagens/refeicoes.jpeg</image:loc>
+      <image:title>Cardápio Barraca do Ivan – Frutos do Mar Paulino Neves MA</image:title>
+      <image:caption>Cardápio completo da Barraca do Ivan: frutos do mar, camarão, peixe frito e petiscos na Praia do Barro Vermelho.</image:caption>
+      <image:geo_location>Paulino Neves, Maranhão, Brasil</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://barracadoivan.com/Imagens/camarao.PNG</image:loc>
+      <image:title>Camarão – Barraca do Ivan, Praia do Barro Vermelho</image:title>
+      <image:caption>Camarão fresco grelhado, especialidade da Barraca do Ivan em Paulino Neves – MA.</image:caption>
+      <image:geo_location>Paulino Neves, Maranhão, Brasil</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://barracadoivan.com/excursoes.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://barracadoivan.com/Imagens/barraca.png</image:loc>
+      <image:title>Excursões para a Praia do Barro Vermelho – Barraca do Ivan</image:title>
+      <image:caption>Excursões com almoço na Barraca do Ivan, Praia do Barro Vermelho, Paulino Neves – MA. Atendemos grupos de Barreirinhas e região.</image:caption>
+      <image:geo_location>Paulino Neves, Maranhão, Brasil</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://barracadoivan.com/como-chegar-paulino-neves.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://barracadoivan.com/Imagens/praiadrone.jpeg</image:loc>
+      <image:title>Como Chegar em Paulino Neves – Praia do Barro Vermelho MA</image:title>
+      <image:caption>Rotas e opções de transporte para chegar à Praia do Barro Vermelho em Paulino Neves, Maranhão.</image:caption>
+      <image:geo_location>Paulino Neves, Maranhão, Brasil</image:geo_location>
+    </image:image>
+  </url>
+
 </urlset>
