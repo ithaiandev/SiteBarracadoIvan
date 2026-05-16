@@ -324,14 +324,14 @@ footer strong { color:var(--areia); }
    RESPONSIVO — NAV MOBILE (≤860px)
 ══════════════════════════════════════════════ */
 @media(max-width:860px) {
-  nav { flex-direction: row; align-items: stretch; }
+  nav { flex-direction: row; align-items: stretch; justify-content: flex-start; }
   .nav-primary-links {
-    display: flex; overflow-x: auto; flex-wrap: nowrap; flex: 1; min-width: 0;
-    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    display: flex; overflow-x: auto; flex-wrap: nowrap; flex: 1 1 0; min-width: 0;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none; justify-content: flex-start;
   }
   .nav-primary-links::-webkit-scrollbar { display: none; }
   .nav-primary-links a { font-size: 0.72rem; padding: 0.75rem 0.85rem; letter-spacing: 0.5px; flex-shrink: 0; }
-  .nav-more { display: flex; align-items: center; position: relative; flex-shrink: 0; }
+  .nav-more { display: flex; align-items: center; position: relative; flex-shrink: 0; border-left: 1px solid rgba(255,255,255,0.12); }
   .mobile-only { display: none !important; }
   .nav-dropdown { right: 0; min-width: 200px; top: 100%; border-radius: 0 0 12px 12px; }
   .nav-dropdown a { text-align: left; }
